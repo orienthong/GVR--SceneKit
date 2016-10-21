@@ -9,31 +9,17 @@
 import UIKit
 import SceneKit // for 3D view
 import CoreMotion // for tracking device motion
+import ModelIO
+
 
 class ViewController: UIViewController {
     
-    let scnScene = SCNScene() // a 3D scene
-    let leftView = SCNView() // view on the left side
-    let rightView = SCNView() // view on the right side
-    
-    var width: CGFloat = 0.0 // width for each view
-    var height: CGFloat = 0.0 // height for each view
-    
-    var boxGeometry = SCNBox() // a cube
-    var boxNode = SCNNode() // node to attach the cube to
-    
-    var cylinderGeometry = SCNCylinder()
-    var cylinderNode = SCNNode()
+    @IBOutlet weak var scnView: SCNView!
+    var sphereNode: SCNNode!
+    var scnScene: SCNScene! // a 3D scene
     
     // camera and node to attach the camera to for left and right view
-    let leftCamera = SCNCamera()
-    let leftCameraNode = SCNNode()
-    let rightCamera = SCNCamera()
-    let rightCameraNode = SCNNode()
-    
-    // a reflective floor and node for the floor
-    let ground = SCNFloor()
-    var groundNode = SCNNode()
+    var scnCameraNode = SCNNode()
     
     // motion manager instance
     let motionManager = CMMotionManager()
@@ -41,103 +27,77 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // add left and right view as subview of the main view
-        self.view.addSubview(leftView)
-        self.view.addSubview(rightView)
-        setupScene()
-        setupBox()
-        setupCylinder()
-        setupCamera()
-        setupFloor()
-        setupMotion()
-    }
-    override func viewDidLayoutSubviews() {
         
-        //compute width and height for each view and assign for each
-        width = self.view.frame.width/2.0
-        height = self.view.frame.height
-        let leftViewFrame = CGRect(x: 0, y: 0, width: width, height: height)
-        let rightViewFrame = CGRect(x: width, y: 0, width: width, height: height)
-        leftView.frame = leftViewFrame
-        rightView.frame = rightViewFrame
+        setupScene()
+        sphereNode = scnScene.rootNode.childNode(withName: "sphere", recursively: true)!
+        //setupCamera()
+        //setupMotion()
+        
     }
     
     //assign scene to each view
     func setupScene() {
-        leftView.scene = scnScene
-        rightView.scene = scnScene
+        scnScene = SCNScene(named: "vrScene.scn")!
+        scnView.scene = scnScene
     }
     
-    // create a cube with different color on each face
-    func setupBox() {
-        boxGeometry = SCNBox(width: 0.5, height: 0.5, length: 0.5, chamferRadius: 0)
-        boxGeometry.materials = [
-            ColorMaterial.blueColor(),
-            ColorMaterial.greenColor(),
-            ColorMaterial.orangeColor(),
-            ColorMaterial.purpleColor(),
-            ColorMaterial.redColor(),
-            ColorMaterial.yellowColor()
-        ]
-        boxNode = SCNNode(geometry: boxGeometry)
-        scnScene.rootNode.addChildNode(boxNode)
-    }
-    
-    func setupCylinder() {
-        cylinderGeometry = SCNCylinder(radius: 0.4, height: 2)
-        cylinderGeometry.materials = [
-            ColorMaterial.blueColor(),
-            ColorMaterial.greenColor(),
-            ColorMaterial.purpleColor()
-        ]
-        cylinderNode = SCNNode(geometry: cylinderGeometry)
-        cylinderNode.position = SCNVector3(3, 2, -2)
-        scnScene.rootNode.addChildNode(cylinderNode)
-    }
     
     
     // setup camera for each view
     func setupCamera() {
-        leftCameraNode.camera = leftCamera
-        leftCameraNode.position = SCNVector3(x: -0.5, y: 0, z: 5)
-        rightCameraNode.camera = rightCamera
-        rightCameraNode.position = SCNVector3(x: 0.5, y: 0, z: 5)
-        scnScene.rootNode.addChildNode(leftCameraNode)
-        scnScene.rootNode.addChildNode(rightCameraNode)
-        leftView.pointOfView = leftCameraNode
-        rightView.pointOfView = rightCameraNode
+        scnCameraNode = scnScene.rootNode.childNode(withName: "camera", recursively: true)!
+        scnCameraNode.position = SCNVector3(x: 0.5, y: 0, z: 5)
+        scnView.pointOfView = scnCameraNode
+        
+//        scnCameraNode.camera?.wantsHDR = true
+        let camera = scnCameraNode.camera!
+//        camera.exposureOffset = CGFloat(0.2)
+        camera.motionBlurIntensity = 0.3
+        scnView.allowsCameraControl = true
     }
     
-    // setup reflective floor
-    func setupFloor() {
-        ground.reflectivity = 0.05
-        ground.materials = [ColorMaterial.magentaColor()]
-        groundNode.geometry = ground
-        groundNode.position = SCNVector3(x: 0, y: -1, z: 0)
-        scnScene.rootNode.addChildNode(groundNode)
-    }
     
     func setupMotion() {
         // time for motion update
         motionManager.deviceMotionUpdateInterval = 1.0 / 60.0
-        if motionManager.deviceMotionAvailable {
-            motionManager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: { (devMotion, error) -> Void in
+        if motionManager.isDeviceMotionAvailable {
+            motionManager.startDeviceMotionUpdates(to: OperationQueue.main, withHandler: { (devMotion, error) -> Void in
                 //change the left camera node euler angle in x, y, z axis
-                self.leftCameraNode.eulerAngles = SCNVector3(
+                self.scnCameraNode.eulerAngles = SCNVector3(
                     -Float((self.motionManager.deviceMotion?.attitude.roll)!) - Float(M_PI_2),
                     Float((self.motionManager.deviceMotion?.attitude.yaw)!),
                     -Float((self.motionManager.deviceMotion?.attitude.pitch)!)
                 )
-                //change the right camera node euler angle in x, y, z axis
-                self.rightCameraNode.eulerAngles = SCNVector3(
-                    -Float((self.motionManager.deviceMotion?.attitude.roll)!) - Float(M_PI_2),
-                    Float((self.motionManager.deviceMotion?.attitude.yaw)!),
-                    -Float((self.motionManager.deviceMotion?.attitude.pitch)!)
-                )
-                
             })
         }
     }
+    
+    var touchX: CGFloat = 0
+    var sphereX: Float = 0
+    var touchY: CGFloat = 0
+    var sphereY: Float = 0
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+        for touch in touches {
+            let location = touch.location(in: scnView)
+            touchX = location.x
+            sphereX = sphereNode.position.x
+        }
+        
+    }
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        for touch in touches {
+            
+            let location = touch.location(in: scnView)
+            
+            sphereNode.position.x = sphereX + (Float(location.x - touchX) * 0.1)
+            
+        }
+        
+    }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

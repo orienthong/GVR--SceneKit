@@ -12,10 +12,18 @@
 		99EB52161D5A1C68005402CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99EB52141D5A1C68005402CC /* Main.storyboard */; };
 		99EB52181D5A1C68005402CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99EB52171D5A1C68005402CC /* Assets.xcassets */; };
 		99EB521B1D5A1C68005402CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99EB52191D5A1C68005402CC /* LaunchScreen.storyboard */; };
-		99EB52231D5A1C92005402CC /* ColorChooser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EB52221D5A1C92005402CC /* ColorChooser.swift */; };
+		BEA2752A04A0F594EEE09F17 /* Pods_SceneKitVRDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57DAFEA54E553C9DFCD758F0 /* Pods_SceneKitVRDemo.framework */; };
+		C5D81FEF1DB0AD6F004B5EE1 /* ColorMaterial.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5D81FEE1DB0AD6F004B5EE1 /* ColorMaterial.swift */; };
+		C5D81FF11DB0B527004B5EE1 /* sindhu_beach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5D81FF01DB0B527004B5EE1 /* sindhu_beach.jpg */; };
+		C5E2908C1DB33FBC0041464F /* interior_hdri_29_20150416_1169368110.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5E290871DB33FBC0041464F /* interior_hdri_29_20150416_1169368110.jpg */; };
+		C5E2908D1DB33FBC0041464F /* spherical.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C5E290881DB33FBC0041464F /* spherical.jpg */; };
+		C5E2908E1DB33FBC0041464F /* sphericalBlurred.png in Resources */ = {isa = PBXBuildFile; fileRef = C5E290891DB33FBC0041464F /* sphericalBlurred.png */; };
+		C5ECD2FB1DB0CC310093B62D /* vrScene.scn in Resources */ = {isa = PBXBuildFile; fileRef = C5ECD2FA1DB0CC310093B62D /* vrScene.scn */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3CF208C7F5FCAD5A416E8B67 /* Pods-SceneKitVRDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SceneKitVRDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SceneKitVRDemo/Pods-SceneKitVRDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		57DAFEA54E553C9DFCD758F0 /* Pods_SceneKitVRDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SceneKitVRDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EB520D1D5A1C68005402CC /* SceneKitVRDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SceneKitVRDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EB52101D5A1C68005402CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99EB52121D5A1C68005402CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -23,7 +31,13 @@
 		99EB52171D5A1C68005402CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99EB521A1D5A1C68005402CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99EB521C1D5A1C68005402CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		99EB52221D5A1C92005402CC /* ColorChooser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorChooser.swift; sourceTree = "<group>"; };
+		C1EE1B10039BCFB6F951E264 /* Pods-SceneKitVRDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SceneKitVRDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-SceneKitVRDemo/Pods-SceneKitVRDemo.release.xcconfig"; sourceTree = "<group>"; };
+		C5D81FEE1DB0AD6F004B5EE1 /* ColorMaterial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMaterial.swift; sourceTree = "<group>"; };
+		C5D81FF01DB0B527004B5EE1 /* sindhu_beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sindhu_beach.jpg; sourceTree = "<group>"; };
+		C5E290871DB33FBC0041464F /* interior_hdri_29_20150416_1169368110.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = interior_hdri_29_20150416_1169368110.jpg; sourceTree = "<group>"; };
+		C5E290881DB33FBC0041464F /* spherical.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = spherical.jpg; sourceTree = "<group>"; };
+		C5E290891DB33FBC0041464F /* sphericalBlurred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sphericalBlurred.png; sourceTree = "<group>"; };
+		C5ECD2FA1DB0CC310093B62D /* vrScene.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = vrScene.scn; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,18 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEA2752A04A0F594EEE09F17 /* Pods_SceneKitVRDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33DB374DEE546A3EC01B7631 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				57DAFEA54E553C9DFCD758F0 /* Pods_SceneKitVRDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		72DDC0425FA8A0674535D49D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3CF208C7F5FCAD5A416E8B67 /* Pods-SceneKitVRDemo.debug.xcconfig */,
+				C1EE1B10039BCFB6F951E264 /* Pods-SceneKitVRDemo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		99EB52041D5A1C68005402CC = {
 			isa = PBXGroup;
 			children = (
-				99EB52221D5A1C92005402CC /* ColorChooser.swift */,
 				99EB520F1D5A1C68005402CC /* SceneKitVRDemo */,
 				99EB520E1D5A1C68005402CC /* Products */,
+				72DDC0425FA8A0674535D49D /* Pods */,
+				33DB374DEE546A3EC01B7631 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,11 +91,17 @@
 			isa = PBXGroup;
 			children = (
 				99EB52101D5A1C68005402CC /* AppDelegate.swift */,
+				C5E290871DB33FBC0041464F /* interior_hdri_29_20150416_1169368110.jpg */,
+				C5E290881DB33FBC0041464F /* spherical.jpg */,
+				C5E290891DB33FBC0041464F /* sphericalBlurred.png */,
 				99EB52121D5A1C68005402CC /* ViewController.swift */,
 				99EB52141D5A1C68005402CC /* Main.storyboard */,
 				99EB52171D5A1C68005402CC /* Assets.xcassets */,
 				99EB52191D5A1C68005402CC /* LaunchScreen.storyboard */,
+				C5D81FF01DB0B527004B5EE1 /* sindhu_beach.jpg */,
 				99EB521C1D5A1C68005402CC /* Info.plist */,
+				C5D81FEE1DB0AD6F004B5EE1 /* ColorMaterial.swift */,
+				C5ECD2FA1DB0CC310093B62D /* vrScene.scn */,
 			);
 			path = SceneKitVRDemo;
 			sourceTree = "<group>";
@@ -74,9 +113,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99EB521F1D5A1C68005402CC /* Build configuration list for PBXNativeTarget "SceneKitVRDemo" */;
 			buildPhases = (
+				55AAD690BE51A2C4EEB0E064 /* [CP] Check Pods Manifest.lock */,
 				99EB52091D5A1C68005402CC /* Sources */,
 				99EB520A1D5A1C68005402CC /* Frameworks */,
 				99EB520B1D5A1C68005402CC /* Resources */,
+				4EDDC4A81FB2A4BA5165282E /* [CP] Embed Pods Frameworks */,
+				F1BE7EB0D654F31EECDE41EB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -99,6 +141,8 @@
 				TargetAttributes = {
 					99EB520C1D5A1C68005402CC = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = S38PJCF5P8;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -125,13 +169,66 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5E2908C1DB33FBC0041464F /* interior_hdri_29_20150416_1169368110.jpg in Resources */,
+				C5D81FF11DB0B527004B5EE1 /* sindhu_beach.jpg in Resources */,
 				99EB521B1D5A1C68005402CC /* LaunchScreen.storyboard in Resources */,
 				99EB52181D5A1C68005402CC /* Assets.xcassets in Resources */,
+				C5E2908E1DB33FBC0041464F /* sphericalBlurred.png in Resources */,
 				99EB52161D5A1C68005402CC /* Main.storyboard in Resources */,
+				C5E2908D1DB33FBC0041464F /* spherical.jpg in Resources */,
+				C5ECD2FB1DB0CC310093B62D /* vrScene.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4EDDC4A81FB2A4BA5165282E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SceneKitVRDemo/Pods-SceneKitVRDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		55AAD690BE51A2C4EEB0E064 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F1BE7EB0D654F31EECDE41EB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SceneKitVRDemo/Pods-SceneKitVRDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		99EB52091D5A1C68005402CC /* Sources */ = {
@@ -140,7 +237,7 @@
 			files = (
 				99EB52131D5A1C68005402CC /* ViewController.swift in Sources */,
 				99EB52111D5A1C68005402CC /* AppDelegate.swift in Sources */,
-				99EB52231D5A1C92005402CC /* ColorChooser.swift in Sources */,
+				C5D81FEF1DB0AD6F004B5EE1 /* ColorMaterial.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,23 +350,33 @@
 		};
 		99EB52201D5A1C68005402CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CF208C7F5FCAD5A416E8B67 /* Pods-SceneKitVRDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S38PJCF5P8;
 				INFOPLIST_FILE = SceneKitVRDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vsujan.SceneKitVRDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scauos.SceneKitVRDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		99EB52211D5A1C68005402CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C1EE1B10039BCFB6F951E264 /* Pods-SceneKitVRDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = S38PJCF5P8;
 				INFOPLIST_FILE = SceneKitVRDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.vsujan.SceneKitVRDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.scauos.SceneKitVRDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -292,6 +399,7 @@
 				99EB52211D5A1C68005402CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
